@@ -1,5 +1,6 @@
 let quedaCount = 0;
 let ativoCount = 0;
+let verf_flag = false;
 const checkInterval = 300000 // Intervalo de verificação em milissegundos (ex. 5000ms = 5s)
 
 $(document).ready(function() {
@@ -8,13 +9,18 @@ $(document).ready(function() {
             url: 'https://auto-parcerias.linx.com.br/LinxDMSAPI.dll/flychat/auth',
             method: 'GET',
             success: function(response) {
-                // ativoCount++;
-                // $('#ativoCounter').text(`Ativos: ${ativoCount}`);
-                // logEvent('ativoLogs', ativoCount, 'Ativo');
+                if(verf_flag) {
+                    ativoCount++;
+                    $('#ativoCounter').text(`Ativos: ${ativoCount}`);
+                    logEvent('ativoLogs', ativoCount, 'Ativo');
+                    verf_flag = false;
+                }
+                    
             },
             error: function(xhr, status, error) {
                 if (xhr.status !== 200) {
                     quedaCount++;
+                    verf_flag = true;
                     $('#quedaCounter').text(`Quedas: ${quedaCount}`);
                     logEvent('quedaLogs', quedaCount, 'Queda');
                     $('#errorLog').text(`Erro: ${xhr.status} - ${xhr.statusText}`);
