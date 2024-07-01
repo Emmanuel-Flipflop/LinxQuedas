@@ -6,7 +6,7 @@ const checkInterval = 300000 // Intervalo de verificação em milissegundos (ex.
 $(document).ready(function() {
     function checkEndpoint() {
         $.ajax({
-            url: 'https://auto-parcerias.linx.com.br/LinxDMSAPI.dll/flychat/auth',
+            //url: 'https://auto-parcerias.linx.com.br/LinxDMSAPI.dll/flychat/auth',
             method: 'GET',
             success: function(response) {
                 if(verf_flag) {
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
         // Simulate an API request to log the event
         $.ajax({
-            url: 'https://auto-parcerias.linx.com.br/LinxDMSAPI.dll/flychat/auth',
+            //url: 'https://auto-parcerias.linx.com.br/LinxDMSAPI.dll/flychat/auth',
             method: 'POST',
             data: {
                 type: type,
