@@ -8,9 +8,9 @@ $(document).ready(function() {
             url: 'https://auto-parcerias.linx.com.br/LinxDMSAPI.dll/flychat/auth',
             method: 'GET',
             success: function(response) {
-                ativoCount++;
-                $('#ativoCounter').text(`Ativos: ${ativoCount}`);
-                logEvent('ativoLogs', ativoCount, 'Ativo');
+                // ativoCount++;
+                // $('#ativoCounter').text(`Ativos: ${ativoCount}`);
+                // logEvent('ativoLogs', ativoCount, 'Ativo');
             },
             error: function(xhr, status, error) {
                 if (xhr.status !== 200) {
