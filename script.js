@@ -22,6 +22,7 @@ $(document).ready(function() {
             }
         });
     }
+//testess
 
     function logEvent(logId, count, type) {
         const now = new Date();
