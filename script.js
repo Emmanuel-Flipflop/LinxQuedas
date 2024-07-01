@@ -1,6 +1,6 @@
 let quedaCount = 0;
 let ativoCount = 0;
-const checkInterval = 60000; // Intervalo de verificação em milissegundos (ex. 5000ms = 5s)
+const checkInterval = 300000 // Intervalo de verificação em milissegundos (ex. 5000ms = 5s)
 
 $(document).ready(function() {
     function checkEndpoint() {
@@ -22,7 +22,7 @@ $(document).ready(function() {
             }
         });
     }
-//testess
+
 
     function logEvent(logId, count, type) {
         const now = new Date();
